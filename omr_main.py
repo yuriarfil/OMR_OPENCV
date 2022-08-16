@@ -73,11 +73,11 @@ if biggestPoints.size != 0 and gradePoints.size != 0:
 
     # APPLY THRESHOLD
     imgWarpGray = cv2.cvtColor(imgWarpColored,cv2.COLOR_BGR2GRAY) # CONVERT TO GRAYSCALE
-    imgThresh = cv2.threshold(imgWarpGray, 170, 255,cv2.THRESH_BINARY_INV )[1] # APPLY THRESHOLD AND INVERSE
+    imgThresh = cv2.threshold(imgWarpGray, 127, 255,cv2.THRESH_BINARY_INV )[1] # APPLY THRESHOLD AND INVERSE
 
     # APPLY THRESHOLD_B
     imgWarpGrayB = cv2.cvtColor(imgWarpColoredB,cv2.COLOR_BGR2GRAY) # CONVERT TO GRAYSCALE
-    imgThreshB = cv2.threshold(imgWarpGrayB, 170, 255,cv2.THRESH_BINARY_INV )[1] # APPLY THRESHOLD AND INVERSE
+    imgThreshB = cv2.threshold(imgWarpGrayB, 127, 255,cv2.THRESH_BINARY_INV )[1] # APPLY THRESHOLD AND INVERSE
 
     boxes = utlis.splitBoxesFree(imgThresh,gridW,gridH) # GET INDIVIDUAL BOXES
     boxesB = utlis.splitBoxesFree(imgThreshB,gridW,gridH) # GET INDIVIDUAL BOXES
